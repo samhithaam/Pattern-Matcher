@@ -1,0 +1,173 @@
+import java.util.Scanner;
+
+/**
+ * A program that has the user guess different patterns in a series of numbers.
+ *
+ * Purdue University -- CS18000 -- Fall 2021 -- Homework 05 -- Challenge
+ *
+ * @author Samhitha Mupharaphu Purdue CS
+ * @version September 27, 2021
+ */
+
+public class PatternMatcher {
+
+    public static void main(String[] args) {
+
+        Scanner scan = new Scanner(System.in);
+
+        String chooseLevel = "Choose Level Difficulty:" +
+                "\n1. Easy\n2. Medium\n3. Hard\n";
+        String startNumber = "Enter a number to start the pattern:";
+        String nextThree = "Enter the next 3 numbers in the pattern:";
+        String congratulations = "Congrats! Your answer was correct!";
+        String sorry = "Sorry! Your answer was incorrect!";
+        String again = "Play Game Again? (y/n)";
+        String ending = "Ending Pattern Matcher...";
+
+        while (true) {
+            System.out.print(chooseLevel);
+            int level = scan.nextInt();
+            scan.nextLine();
+
+            if (level == 1) {
+                System.out.println(startNumber);
+                int originalNumber = scan.nextInt();
+                scan.nextLine();
+
+                System.out.println(nextThree);
+                System.out.print(originalNumber);
+                int number;
+
+                number = originalNumber + 2;
+                System.out.print(" " + number);
+
+                for (int i = 0; i < 2; i++) {
+                    number += 2;
+                    System.out.print(" " + number);
+                }
+                System.out.print("\n");
+                int one = scan.nextInt();
+                scan.nextLine();
+                int two = scan.nextInt();
+                scan.nextLine();
+                int three = scan.nextInt();
+                scan.nextLine();
+
+                int numOne = originalNumber + 2 + 2 + 2 + 2;
+                int numTwo = originalNumber + 2 + 2 + 2 + 2 + 2;
+                int numThree = originalNumber + 2 + 2 + 2 + 2 + 2 + 2;
+
+                if (one == numOne && two == numTwo && three == numThree) {
+                    System.out.println(congratulations);
+                } else {
+                    System.out.println(sorry);
+                }
+
+                System.out.println(again);
+                String choice = scan.nextLine();
+                if (choice.equals("n")) {
+                    System.out.println(ending);
+                    break;
+                }
+
+            } else if (level == 2) {
+                System.out.println(startNumber);
+                int originalNumber = scan.nextInt();
+                scan.nextLine();
+
+                System.out.println(nextThree);
+                System.out.print(originalNumber);
+                int number;
+
+                number = originalNumber * 4;
+                System.out.print(" " + number);
+
+                for (int i = 0; i < 2; i++) {
+                    number = number * 4;
+                    System.out.print(" " + number);
+                }
+                System.out.print("\n");
+                int one = scan.nextInt();
+                scan.nextLine();
+                int two = scan.nextInt();
+                scan.nextLine();
+                int three = scan.nextInt();
+                scan.nextLine();
+
+                int numOne = originalNumber * 4 * 4 * 4 * 4;
+                int numTwo = originalNumber * 4 * 4 * 4 * 4 * 4;
+                int numThree = originalNumber * 4 * 4 * 4 * 4 * 4 * 4;
+
+                if (one == numOne && two == numTwo && three == numThree) {
+                    System.out.println(congratulations);
+                } else {
+                    System.out.println(sorry);
+                }
+
+                System.out.println(again);
+                String choice = scan.nextLine();
+                if (choice.equals("n")) {
+                    System.out.println(ending);
+                    break;
+                }
+
+            } else if (level == 3) {
+
+                System.out.println(startNumber);
+                int originalNumber = scan.nextInt();
+                scan.nextLine();
+
+                System.out.println(nextThree);
+                int number;
+
+                number = (originalNumber * originalNumber) + 1;
+                System.out.print(number);
+
+                number = originalNumber + 1;
+                number = (number * number) + 1;
+                System.out.print(" " + number);
+
+                number = originalNumber + 2;
+                number = (number * number) + 1;
+                System.out.print(" " + number);
+
+                number = originalNumber + 3;
+                number = (number * number) + 1;
+                System.out.print(" " + number);
+
+                System.out.print("\n");
+                int one = scan.nextInt();
+                scan.nextLine();
+                int two = scan.nextInt();
+                scan.nextLine();
+                int three = scan.nextInt();
+                scan.nextLine();
+
+                number = originalNumber + 4;
+                number = (number * number) + 1;
+                int numOne = number;
+
+                number = originalNumber + 5;
+                number = (number * number) + 1;
+                int numTwo = number;
+
+                number = originalNumber + 6;
+                number = (number * number) + 1;
+                int numThree = number;
+
+                if (one == numOne && two == numTwo && three == numThree) {
+                    System.out.println(congratulations);
+                } else {
+                    System.out.println(sorry);
+                }
+
+                System.out.println(again);
+                String choice = scan.nextLine();
+                if (choice.equals("n")) {
+                    System.out.println(ending);
+                    break;
+                }
+            }
+        }
+    }
+}
